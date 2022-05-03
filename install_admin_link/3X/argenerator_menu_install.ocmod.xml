@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>XML update link to admin</name>
+	<id>XML update link to admin</id>
+	<code>XML update link to admin</code>
+	<version>3.x</version>
+	<author>G.Richard </author>
+
+	<file path="admin/controller/common/column_left.php">
+		<operation error="log">
+			<search><![CDATA[$marketplace = array();]]></search>
+				<add position="before"><![CDATA[
+				
+			$link1 = array();
+
+			
+
+				$link1[] = array(
+					'name'	   => "ÁRGÉP Generáló link",
+					'href'     => 'price_generator.php?argep=1&'. $this->session->data['user_token'],
+					'children' => array()			
+				);
+				
+				$link1[] = array(
+					'name'	   => "ÁRGÉP XML LINK",
+					'href'     => 'argep.xml',
+					'children' => array()			
+				);
+				
+/**+++**/
+				$link1[] = array(
+					'name'	   => "Olcsóbbat / Kirakat / Árkozpont Generáló link",
+					'href'     => 'price_generator.php?kirakat=1&'. $this->session->data['user_token'],
+					'children' => array()			
+				);
+				
+				$link1[] = array(
+					'name'	   => "Olcsóbbat / Kirakat / Árkozpon XML LINK",
+					'href'     => 'kirakat.xml',
+					'children' => array()			
+				);
+/**+++**/
+				$link1[] = array(
+					'name'	   => "Árukereső / Összehasonlítom Generáló link",
+					'href'     => 'price_generator.php?arukereso=1&'. $this->session->data['user_token'],
+					'children' => array()			
+				);
+				
+				$link1[] = array(
+					'name'	   => "Árukereső / Összehasonlítom XML LINK",
+					'href'     => 'arukereso.xml',
+					'children' => array()			
+				);				
+/**+++**/
+				$link1[] = array(
+					'name'	   => "Olcso Generáló link",
+					'href'     => 'price_generator.php?olcso=1&'. $this->session->data['user_token'],
+					'children' => array()			
+				);
+				
+				$link1[] = array(
+					'name'	   => "Olcso XML LINK",
+					'href'     => 'olcso.xml',
+					'children' => array()			
+				);		
+				
+				$data['menus'][] = array(
+					'id'       => 'menu-link',
+					'icon'	   => 'fa-link', 
+					'name'	   => "Ár generátor XML",
+					'href'     => '',
+					'children' => $link1
+				);
+
+				
+			/**second level**/	
+			
+			
+				
+				]]></add>
+		</operation>
+	</file>
+	
+</modification>
+
+

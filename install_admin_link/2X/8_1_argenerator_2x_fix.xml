@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>8 az 1-ben Árgenerátor</id>
+	<version>2.3.x</version>
+	<vqmver>2.0.1</vqmver>
+	<author>https://www.renovatiomarketing.hu (Richard)</author>
+
+	<file name="admin/view/template/common/column_left.tpl">	
+		<operation error="skip">
+			<search position="before" offset="1">
+				<![CDATA[<div id="stats">]]>
+			</search>
+		
+			<add>
+				<![CDATA[			
+				
+				
+			<li id="menu-argep" class="">
+            <a class="parent"><i class="fa fa-share-alt fw"></i> <span>Árukereső Árgép listák...</span></a>
+                  <ul class="collapse in" aria-expanded="true">
+				  
+				 <li class=""><a class="parent">Árgép</a>
+                	<ul>
+						<li><a href="argep.xml" target='_blank'>XML Link</a></li>
+						<li><a href="price_generator.php?argep=1" target='_blank'>Generáló Link</a></li>
+                	</ul>
+
+                <li class=""><a class="parent">Olcsóbbat / Kirakat / Árkozpont</a>
+                	<ul>
+						<li><a href="kirakat.xml" target='_blank'>XML Link</a></li>
+						<li><a href="price_generator.php?kirakat=1" target='_blank'>Generáló Link</a></li>
+                	</ul>
+                </li>
+
+				<li class=""><a class="parent">Árukereső / Összehasonlítom</a>
+                	<ul>
+						<li><a href="arukereso.xml" target='_blank'>XML Link</a></li>
+						<li><a href="price_generator.php?arukereso=1" target='_blank'>Generáló Link</a></li>
+                	</ul>
+                </li>
+
+
+				<li class=""><a class="parent">Jó-Áron.hu</a>
+                	<ul>
+						<li><a href="joaron.csv" target='_blank'>CSV Link</a></li>
+						<li><a href="price_generator.php?joaron=1" target='_blank'>Generáló Link</a></li>
+                	</ul>
+                </li>
+
+				<li class=""><a class="parent">Olcso</a>
+                	<ul>
+						<li><a href="olcso.xml" target='_blank'>XML Link</a></li>
+						<li><a href="price_generator.php?olcso=1" target='_blank'>Generáló Link</a></li>
+                	</ul>
+                </li>
+            </ul>					
+					
+
+          </li>
+
+		 
+            ]]>
+			</add>
+		
+		</operation>
+
+	</file>
+	
+</modification>
