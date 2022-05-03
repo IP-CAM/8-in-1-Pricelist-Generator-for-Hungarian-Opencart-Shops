@@ -1,5 +1,5 @@
-# 8 az 1 ben arlista XML opencart
-8 az 1 -ben árlista generátor magyar webshopok számára.
+# 8 az 1 -ben árlista generátor magyar webshopok számára.
+# 8 in 1 Pricelist Generator for Hungarian Opencart v.1.5.x - v.3.x Shops
 
 XML formátumok:
 - Árgép
