@@ -31,3 +31,7 @@ Ez a modul 2014.-ben került először a kiadásra azóta rengeteg fejlesztésen
 # Paraméterek példák
 [ domain ]/admin/price_generator.php?argep=1
 Ez létre hoz az admin mappában egy argep.xml filet.
+
+További leírás, infó:
+www.opencart.com/index.php?route=marketplace/extension/info&extension_id=19963
+
