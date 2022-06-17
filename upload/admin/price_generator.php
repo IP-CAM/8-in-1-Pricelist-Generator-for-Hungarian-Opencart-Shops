@@ -465,11 +465,15 @@ if($PDO_connect == false){
 	
 	//SZÁZALÉKOS ADÓ.
 	if(isset($inc_ado[$products['tax_class_id']]["P"][0])){
-		$p_count = count($inc_ado[$products['tax_class_id']]["P"][0]);
+		if(is_array($inc_ado[$products['tax_class_id']]["P"][0])){
+			$p_count = count($inc_ado[$products['tax_class_id']]["P"][0]);
+		}else{
+			$p_count = 1;
+		}
 
 		if ($p_count != 0){
 			for($i = 0;$i <= $p_count;$i++){
-				if ($inc_ado[$products['tax_class_id']]["P"][$i] != 0){
+				if (!empty($inc_ado[$products['tax_class_id']]["P"][$i])){
 					$tax_total 			= $tax_total + (($inc_ado[$products['tax_class_id']]["P"][$i] /100)*$products['price']);
 					$tax_total_discount = $tax_total_discount + (($inc_ado[$products['tax_class_id']]["P"][$i] /100)*$products['special_price']);
 				}else{
