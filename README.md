@@ -17,7 +17,7 @@ Ez a modul 2014.-ben került először a kiadásra azóta rengeteg fejlesztésen
 
 # Kompatiblitás
 
-- PHP 5-7 
+- PHP 5-8 
 - Opencart 1-3x minden verzióval.
 
 # Telepítés 
