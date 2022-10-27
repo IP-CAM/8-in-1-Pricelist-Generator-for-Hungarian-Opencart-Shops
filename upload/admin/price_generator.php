@@ -270,14 +270,11 @@ if($PDO_connect == false) {
 		$datass[] = $datatype;
 	}
 }else{
-	$datatype = $stmt->fetch(PDO::FETCH_ASSOC);
-	while($datatype = $stmt->fetch(PDO::FETCH_ASSOC)) {
-		$datass[] = $datatype;
-	}
+	$datatype = $stmt;
 }
 
 
-foreach($datass as $products){ 
+foreach($datatype as $products){ 
 
 /**kategkizárás**/
 $kihagy = FALSE;
