@@ -486,11 +486,11 @@ if($PDO_connect == false){
 
 if ($products['special_price'] != ""){
 	$simple_price = number_format($products['special_price'] + $tax_total_discount,0,'','');
-	$simple_netto = number_format($products['special_price'] /1.27,0,'','');
+	$simple_netto = number_format($products['special_price'],0,'','');
 	$originalPrice = number_format($products['price'] + $tax_total,0,'','');
 }else{
 	$simple_price = number_format($products['price'] + $tax_total,0,'','');
-	$simple_netto = number_format($products['price'] /1.27,0,'','');
+	$simple_netto = number_format($products['price'],0,'','');
 	$originalPrice = "";
 }
 
