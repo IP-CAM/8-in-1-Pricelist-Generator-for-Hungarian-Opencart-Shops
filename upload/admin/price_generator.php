@@ -171,7 +171,7 @@ if (count($stock_status) != 0){
 }
 
 /********* TERMÉKEK *********/
-$prod_q = "SELECT 
+$prod_q = "SELECT DISTINCT
 			p.product_id,
 			p.model,
 			p.quantity, 
@@ -180,13 +180,11 @@ $prod_q = "SELECT
 			p.manufacturer_id,
 			p.price,
 			p.stock_status_id,
+
 			
-			(SELECT 
-			IF(((s.date_start = '0000-00-00' OR s.date_start < NOW()) AND (s.date_end = '0000-00-00' OR s.date_end > NOW())) , s.price, NULL) as price
-			FROM ".DB_PREFIX."product_special s 
-			WHERE s.product_id = p.product_id
-			AND s.customer_group_id = '$customer_group_id' 
-			ORDER BY s.priority ASC LIMIT 0,1) as special_price,
+		(SELECT price FROM " . DB_PREFIX . "product_discount pd2 WHERE pd2.product_id = p.product_id AND pd2.customer_group_id = '".$customer_group_id."' 
+		AND ((pd2.date_start = '0000-00-00' OR pd2.date_start < NOW()) AND (pd2.date_end = '0000-00-00' OR pd2.date_end > NOW())) 
+		ORDER BY pd2.priority ASC, pd2.price ASC LIMIT 1) AS special_price, 
 		
 			p.tax_class_id,
 			p.ean,
@@ -210,6 +208,8 @@ $prod_q = "SELECT
 			
 			pts.store_id= '$config_store_id'".$stock_status_array;
 
+
+			
 if($PDO_connect == false){			
 	$products_query = mysql_query($prod_q) or die(mysql_error());
 }else{
